@@ -3,37 +3,84 @@
 <head>
     <title>StudyMate AI</title>
     <style>
-        body{
+        body {
             font-family: Arial, sans-serif;
-            text-align:center;
-            background:#f4f4f4;
-            padding:50px;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        h1{
-            color:#4F46E5;
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 300px;
+            text-align: center;
         }
 
-        .btn{
-            background:#4F46E5;
-            color:white;
-            padding:12px 20px;
-            text-decoration:none;
-            border-radius:8px;
+        h1 {
+            color: #5a4dfc;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #5a4dfc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #4638d8;
+        }
+
+        #welcome {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>🎓 StudyMate AI</h1>
+<div class="container">
+    <div id="login">
+        <h1>🎓 StudyMate AI</h1>
 
-    <h2>Learn Smarter. Score Higher.</h2>
+        <input type="text" id="username" placeholder="Username">
 
-    <p>Your AI-powered study assistant.</p>
+        <input type="password" id="password" placeholder="Password">
 
-    <br>
+        <button onclick="login()">Login</button>
+    </div>
 
-    <a href="#" class="btn">Get Started</a>
+    <div id="welcome">
+        <h1>Welcome!</h1>
+        <p>You have successfully logged in to StudyMate AI.</p>
+    </div>
+</div>
+
+<script>
+function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if(username && password){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("welcome").style.display = "block";
+    } else {
+        alert("Please enter username and password.");
+    }
+}
+</script>
 
 </body>
 </html>
